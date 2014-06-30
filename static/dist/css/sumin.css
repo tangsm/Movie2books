@@ -1,0 +1,70 @@
+
+	#title {font-family: 'Monotype Corsiva', cursive;
+	        font-size: 32px;
+            color: FFFF00;
+        padding-top: 0px;
+        padding-bottom: 0px; 
+		padding-left: 16px; 
+		padding-right: 16px}
+	#credits {
+		font-size: 16px;
+		color: #FFFFFF;
+		padding-top: 4px; 
+		padding-bottom: 4px; 
+		padding-left: 20px; 
+		padding-right: 16px
+	}
+	#about {
+		font-size: 16px; 
+		float: right; 
+		color: #FFFFFF;
+		padding-top: 10px; 
+		padding-bottom: 0px; 
+		padding-left: 10px; 
+		padding-right: 10px
+	}
+
+
+	#amazon {
+		font-size: 18px; 
+		float: right; 
+		padding-top: 10px;
+		padding-bottom: 10px; 
+		padding-left: 10px; 
+		padding-right: 10px;
+		vertical-align: middle;
+	}
+
+.panel-primary {
+  border-color: #CCCC66;
+}
+
+.panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: #CCCC66;
+  border-color: #CCCC66;
+}
+
+
+
+    .slideshare-content {
+		width: 80%;
+		height: 50%;
+		margin: 0px auto;
+	}
+	.slideshare-embed-container {
+		height: 0;
+		width: 100%;
+		padding-bottom: 83.37%;
+		overflow: hidden;
+		position: relative;
+	}
+	.slideshare-embed-container iframe {
+		width: 90%;
+		height: 75%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.row {margin-left: 100px !important}

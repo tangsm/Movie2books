@@ -1,0 +1,79 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+    <div class="container">
+
+      <!-- show logo image -->
+      <center>
+      </br></br>
+        <p><img src="./static/images/movie2books_logo.jpg" height = "100" style="border:2px solid white"></p>
+      </center>
+      <center>
+        <p class="lead">Find out books you may like by submitting your favorite movie.</p>
+      </center>
+
+  
+ 
+          <form action="/search" method="POST">
+          <center>
+          <h3>Enter Your Favorite Movie: 
+          <input type="text" name="movietitle" id="movieTitle" placeholder = "enter movie title" class = "typeahead">
+          <input type="submit" value="Submit">
+          </h3>
+          </center>
+          </form>
+
+          <br/><br/>
+  
+          <div class="row">
+             <p class="lead">People who liked <b style="color:black">{{keyword}}</b> may also like the following books:</p>
+          </div> 
+
+
+      <h4> {% for book in recbooks%} 
+
+        
+
+        <div class="row"></div>  
+
+        <div id="R1" class="row" width=1140px >
+          <div class = "panel panel-primary col-xs-12">
+            <div class = "panel-heading">
+            <h3><div id="gotTitle" style="font-family:fantasy"><b>{{book[0]}}</b> 
+              <a href="https://www.facebook.com/profile.php?id={{book[5]}}" target="_blank"><img
+src="./static/images/facebook.png" height=40px align="right" style="margin-left:10px; margin-right:10px; vertical-align: top;"></a>
+              <a href="http://www.amazon.com/dp/{{book[4]}}" target="_blank"><img
+src="./static/images/amazon.png" height=40px align="right" style="margin-left:10px; margin-right:10px; vertical-align: top;"/></a>
+            </div></h3>
+
+            </div>
+            <div class = "panel-body">
+             <IMG id="gotImage" SRC="./static/bookimages/{{book[1]}}" class="thumbnail img-rounded" height=160px align="left" style="margin-left:100px">
+             <h4><div id="gotAuthor" class="col-xs-offset-4"><i>By {{book[2]}}</i></div></h6>
+             <div id="gotDescription" style="font-family:helvetica" class="col-xs-offset-4" font-size=x-small><font size="2.5">{{book[3]}}</font></div>
+            </div>
+          </div>
+        </div>
+
+	   {% endfor %} </h4>
+      
+
+    </div><!-- /.container -->
+    
+<script>
+$('#movieTitle').typeahead([
+{
+name: 'movieTitle',
+prefetch: 'static/dist/js/movietitles.json', 
+valueKey: 'name',              
+limit: 5
+}
+]);
+</script>
+
+
+{% endblock %}

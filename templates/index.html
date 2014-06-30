@@ -1,0 +1,58 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+
+
+      <!-- show logo image -->
+      <center>
+      </br></br>
+        <p><img src="./static/images/movie2books_logo.jpg" height = "100" style="border:2px solid white"></p>
+      </center>
+      <center>
+        <p class="lead">Find out books you may like by submitting your favorite movie.</p>
+      </center>
+
+  
+ 
+          <form action="/search" method="POST">
+          <center>
+          <h3>Enter Your Favorite Movie: 
+          <input type="text" name="movietitle" id="movieTitle" placeholder = "enter movie title" class = "typeahead">
+          <input type="submit" value="Submit">
+          </h3>
+          </center>
+          </form>
+
+
+
+    <!-- show logo image -->
+    <div class="row" >
+      <div class="col-md-offset-3 col-md-5 text-right">
+        <br/>
+        <br/>
+        <img src="./static/images/Movie2books.png" height = "400" style="border:2px solid white" class="img-rounded">
+      </div>
+    </div>
+
+
+    </div><!-- /.container -->
+   
+
+<script>
+$('#movieTitle').typeahead([
+{
+name: 'movieTitle',
+prefetch: 'static/dist/js/movietitles.json', 
+valueKey: 'name',              
+limit: 5
+}
+]);
+</script>
+
+
+
+    
+ {% endblock %}
